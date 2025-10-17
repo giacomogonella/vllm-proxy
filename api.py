@@ -181,7 +181,7 @@ async def generate(req: GenerateRequest):
         "temperature": temperature,
     }
     if max_tokens is not None:
-        payload["max_tokens"] = max_tokens
+        payload["max_completion_tokens"] = max_tokens
 
     # Unified call: routes internally based on model name
     response_text = await call_chat(payload, model)
